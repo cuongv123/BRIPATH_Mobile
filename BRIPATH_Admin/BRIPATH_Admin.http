@@ -1,0 +1,6 @@
+@BRIPATH_Admin_HostAddress = http://localhost:5103
+
+GET {{BRIPATH_Admin_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
