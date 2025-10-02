@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+/BRIPATH_User/appsettings.json
+/BRIPATH_Admin/appsettings.json
+/BRIPATH_Company/appsettings.json
