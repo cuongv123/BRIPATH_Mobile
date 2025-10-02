@@ -1,0 +1,59 @@
+version: '3.8'
+services:
+  userdb:
+    image:  pgvector/pgvector:0.8.1-pg17-trixie
+    container_name: bripath_user
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: userdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - bripath_mobile_user_data:/var/lib/postgresql/data
+
+  companydb:
+    image:  pgvector/pgvector:0.8.1-pg17-trixie
+    container_name: bripath_company
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: companydb
+    ports:
+      - "5434:5432"
+    volumes:
+      - bripath_mobile_company_data:/var/lib/postgresql/data
+
+  admindb:
+    image:  pgvector/pgvector:0.8.1-pg17-trixie
+    container_name: bripath_admin
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: admindb
+    ports:
+      - "5435:5432"
+    volumes:
+      - bripath_mobile_admin_data:/var/lib/postgresql/data
+
+  authdb:
+    image:  pgvector/pgvector:0.8.1-pg17-trixie
+    container_name: bripath_auth
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: authdb
+    ports:
+      - "5436:5432"
+    volumes:
+      - bripath_mobile_auth_data:/var/lib/postgresql/data
+
+volumes:
+  bripath_mobile_user_data:
+  bripath_mobile_company_data:
+  bripath_mobile_admin_data:
+  bripath_mobile_auth_data:  
